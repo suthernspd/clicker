@@ -27,30 +27,30 @@ export default (state = woodReducerDefaultState, action) => {
         case 'WOOD_BUYCLICK':
             return {
                 ...state,
-                woodCount: state.woodCount - action.woodClickUpgCost,
-                woodPerClick: state.woodPerClick + action.woodPerClickPerUpg,
+                woodCount: state.woodCount - state.woodClickUpgCost,
+                woodPerClick: state.woodPerClick + state.woodPerClickPerUpg,
                 woodClickUpgCost: (state.woodPerClick + ((3*(state.woodPerClick-1))/100)),
                 woodCalcBonus: state.woodBonus + (state.woodCount / 1000)
             };
         case 'WOOD_SELLCLICK':
             return {
                 ...state,
-                woodCount: state.woodCount + action.woodClickUpgCost,
-                woodPerClick: state.woodPerClick - action.woodPerClickPerUpg,
+                woodCount: state.woodCount + state.woodClickUpgCost,
+                woodPerClick: state.woodPerClick - state.woodPerClickPerUpg,
                 woodClickUpgCost: (state.woodPerClick + ((3*(state.woodPerClick-1))/100)),
                 woodCalcBonus: state.woodBonus + (state.woodCount / 1000)
             };
         case 'WOOD_BUYINCOME':
             return {
                 ...state,
-                woodCount: state.woodCount - action.woodClickUpgCost,
-                woodIncome: state.woodIncome + action.woodPerClickPerUpg
+                woodCount: state.woodCount - state.woodClickUpgCost,
+                woodIncome: state.woodIncome + state.woodPerClickPerUpg
             };
         case 'WOOD_SELLINCOME':
             return {
                 ...state,
-                woodCount: state.woodCount + action.woodClickUpgCost,
-                woodIncome: state.woodIncome - action.woodPerClickPerUpg
+                woodCount: state.woodCount + state.woodClickUpgCost,
+                woodIncome: state.woodIncome - state.woodPerClickPerUpg
             };
         case 'WOOD_RESET':
             return {

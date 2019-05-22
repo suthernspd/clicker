@@ -27,30 +27,30 @@ export default (state = goldReducerDefaultState, action) => {
         case 'GOLD_BUYCLICK':
             return {
                 ...state,
-                goldCount: state.goldCount - action.goldClickUpgCost,
-                goldPerClick: state.goldPerClick + action.goldPerClickPerUpg,
+                goldCount: state.goldCount - state.goldClickUpgCost,
+                goldPerClick: state.goldPerClick + state.goldPerClickPerUpg,
                 goldClickUpgCost: (state.goldPerClick + ((3*(state.goldPerClick-1))/100)),
                 goldCalcBonus: state.goldBonus + (state.goldCount / 1000)
             };
         case 'GOLD_SELLCLICK':
             return {
                 ...state,
-                goldCount: state.goldCount + action.goldClickUpgCost,
-                goldPerClick: state.goldPerClick - action.goldPerClickPerUpg,
+                goldCount: state.goldCount + state.goldClickUpgCost,
+                goldPerClick: state.goldPerClick - state.goldPerClickPerUpg,
                 goldClickUpgCost: (state.goldPerClick + ((3*(state.goldPerClick-1))/100)),
                 goldCalcBonus: state.goldBonus + (state.goldCount / 1000)
             };
         case 'GOLD_BUYINCOME':
             return {
                 ...state,
-                goldCount: state.goldCount - action.goldClickUpgCost,
-                goldIncome: state.goldIncome + action.goldPerClickPerUpg
+                goldCount: state.goldCount - state.goldClickUpgCost,
+                goldIncome: state.goldIncome + state.goldPerClickPerUpg
             };
         case 'GOLD_SELLINCOME':
             return {
                 ...state,
-                goldCount: state.goldCount + action.goldClickUpgCost,
-                goldIncome: state.goldIncome - action.goldPerClickPerUpg
+                goldCount: state.goldCount + state.goldClickUpgCost,
+                goldIncome: state.goldIncome - state.goldPerClickPerUpg
             };
         case 'GOLD_RESET':
             return {

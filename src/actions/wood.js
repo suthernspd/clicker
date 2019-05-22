@@ -4,25 +4,17 @@ export const woodClickIncrement = () => ({
 export const woodClickIncome = () => ({
     type: 'WOOD_CLICK_INCOME'
 });
-export const woodBuyClick = (incCost = 10, countIncInc=0.1) => ({
-    type: 'WOOD_BUYCLICK',
-    incCost,
-    countIncInc
+export const woodBuyClick = () => ({
+    type: 'WOOD_BUYCLICK'
 });
-export const woodSellClick = (incCost = 10, countIncInc=0.1) => ({
-    type: 'WOOD_SELLCLICK',
-    incCost,
-    countIncInc
+export const woodSellClick = () => ({
+    type: 'WOOD_SELLCLICK'
 });
-export const woodBuyIncome = (incCost = 10, countIncInc=0.1) => ({
-    type: 'WOOD_BUYINCOME',
-    incCost,
-    countIncInc
+export const woodBuyIncome = () => ({
+    type: 'WOOD_BUYINCOME'
 });
-export const woodSellIncome = (incCost = 10, countIncInc=0.1) => ({
-    type: 'WOOD_SELLINCOME',
-    incCost,
-    countIncInc
+export const woodSellIncome = () => ({
+    type: 'WOOD_SELLINCOME'
 });
 export const woodReset = () => ({
     type: 'WOOD_RESET'

@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header';
-//import Buttons from './Buttons';
-import ClickButton from './ClickButton';
+import Buttons from './Buttons';
 
 export default class Clicker extends React.Component {
     render() {
@@ -10,7 +9,7 @@ export default class Clicker extends React.Component {
         return (
             <div>
                 <Header title={title} subtitle={subtitle} />
-                <ClickButton />
+                <Buttons />
             </div>
         );
     }

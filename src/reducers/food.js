@@ -27,30 +27,30 @@ export default (state = foodReducerDefaultState, action) => {
         case 'FOOD_BUYCLICK':
             return {
                 ...state,
-                foodCount: state.foodCount - action.foodClickUpgCost,
-                foodPerClick: state.foodPerClick + action.foodPerClickPerUpg,
+                foodCount: state.foodCount - state.foodClickUpgCost,
+                foodPerClick: state.foodPerClick + state.foodPerClickPerUpg,
                 foodClickUpgCost: (state.foodPerClick + ((3*(state.foodPerClick-1))/100)),
                 foodCalcBonus: state.foodBonus + (state.foodCount / 1000)
             };
         case 'FOOD_SELLCLICK':
             return {
                 ...state,
-                foodCount: state.foodCount + action.foodClickUpgCost,
-                foodPerClick: state.foodPerClick - action.foodPerClickPerUpg,
+                foodCount: state.foodCount + state.foodClickUpgCost,
+                foodPerClick: state.foodPerClick - state.foodPerClickPerUpg,
                 foodClickUpgCost: (state.foodPerClick + ((3*(state.foodPerClick-1))/100)),
                 foodCalcBonus: state.foodBonus + (state.foodCount / 1000)
             };
         case 'FOOD_BUYINCOME':
             return {
                 ...state,
-                foodCount: state.foodCount - action.foodClickUpgCost,
-                foodIncome: state.foodIncome + action.foodPerClickPerUpg
+                foodCount: state.foodCount - state.foodClickUpgCost,
+                foodIncome: state.foodIncome + state.foodPerClickPerUpg
             };
         case 'FOOD_SELLINCOME':
             return {
                 ...state,
-                foodCount: state.foodCount + action.foodClickUpgCost,
-                foodIncome: state.foodIncome - action.foodPerClickPerUpg
+                foodCount: state.foodCount + state.foodClickUpgCost,
+                foodIncome: state.foodIncome - state.foodPerClickPerUpg
             };
         case 'FOOD_RESET':
             return {

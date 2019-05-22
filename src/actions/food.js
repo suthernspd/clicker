@@ -4,25 +4,17 @@ export const foodClickIncrement = () => ({
 export const foodClickIncome = () => ({
     type: 'FOOD_CLICK_INCOME'
 });
-export const foodBuyClick = (incCost = 10, countIncInc=0.1) => ({
-    type: 'FOOD_BUYCLICK',
-    incCost,
-    countIncInc
+export const foodBuyClick = () => ({
+    type: 'FOOD_BUYCLICK'
 });
-export const foodSellClick = (incCost = 10, countIncInc=0.1) => ({
-    type: 'FOOD_SELLCLICK',
-    incCost,
-    countIncInc
+export const foodSellClick = () => ({
+    type: 'FOOD_SELLCLICK'
 });
-export const foodBuyIncome = (incCost = 10, countIncInc=0.1) => ({
-    type: 'FOOD_BUYINCOME',
-    incCost,
-    countIncInc
+export const foodBuyIncome = () => ({
+    type: 'FOOD_BUYINCOME'
 });
-export const foodSellIncome = (incCost = 10, countIncInc=0.1) => ({
-    type: 'FOOD_SELLINCOME',
-    incCost,
-    countIncInc
+export const foodSellIncome = () => ({
+    type: 'FOOD_SELLINCOME'
 });
 export const foodReset = () => ({
     type: 'FOOD_RESET'
